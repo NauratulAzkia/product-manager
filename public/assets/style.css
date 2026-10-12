@@ -1,0 +1,299 @@
+/* Box model & reset dasar */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f3f4f6;
+    color: #1f2937;
+    line-height: 1.5;
+}
+
+/* Container utama */
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 24px 16px;
+}
+
+.container.small {
+    max-width: 560px;
+}
+
+/* Top bar (pencarian & tombol tambah) */
+.top-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding: 14px 18px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+
+.search-form {
+    display: flex;
+    flex: 1;
+    min-width: 260px;
+    gap: 8px;
+}
+
+.search-form input[type="text"] {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.search-form input[type="text"]:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+/* Tombol */
+.btn {
+    display: inline-block;
+    padding: 8px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background-color: #ffffff;
+    color: #374151;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #f9fafb;
+}
+
+.btn.primary {
+    background-color: #2563eb;
+    color: #ffffff;
+    border-color: #2563eb;
+}
+
+.btn.primary:hover {
+    background-color: #1d4ed8;
+}
+
+.btn.secondary {
+    background-color: #6b7280;
+    color: #ffffff;
+    border-color: #6b7280;
+}
+
+.btn.secondary:hover {
+    background-color: #4b5563;
+}
+
+.btn.edit-btn {
+    background-color: #f3f4f6;
+    color: #1f2937;
+    border-color: #d1d5db;
+    flex: 1;
+}
+
+.btn.edit-btn:hover {
+    background-color: #e5e7eb;
+}
+
+.btn.danger {
+    background-color: #dc2626;
+    color: #ffffff;
+    border-color: #dc2626;
+    flex: 1;
+}
+
+.btn.danger:hover {
+    background-color: #b91c1c;
+}
+
+/* Alert notifikasi */
+.alert {
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.alert.success {
+    background-color: #dcfce7;
+    color: #15803d;
+    border: 1px solid #bbf7d0;
+}
+
+.alert.danger {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #fecaca;
+}
+
+/* Grid daftar produk dengan Flexbox */
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    align-items: stretch;
+}
+
+/* Card item produk */
+.card {
+    flex: 1 1 280px;
+    max-width: 350px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 18px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.card .category {
+    align-self: flex-start;
+    display: inline-block;
+    background-color: #eff6ff;
+    color: #1d4ed8;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card .product-title {
+    margin: 0 0 10px 0;
+    font-size: 17px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.card .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #059669;
+    margin: 0 0 6px 0;
+}
+
+.card .stock {
+    font-size: 13px;
+    color: #6b7280;
+    margin: 0 0 16px 0;
+}
+
+.card .actions {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.card .actions form {
+    flex: 1;
+    display: flex;
+    margin: 0;
+}
+
+.card .actions form button {
+    width: 100%;
+}
+
+/* State kosong jika data tidak ada */
+.empty-state {
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px dashed #d1d5db;
+    color: #6b7280;
+}
+
+/* Styling Form Create & Edit */
+.form-card {
+    max-width: 100%;
+    margin-top: 20px;
+}
+
+.form-card h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #111827;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: flex;
+    gap: 14px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #374151;
+}
+
+.form-group input {
+    padding: 9px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+.field-error {
+    color: #dc2626;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+@media (max-width: 640px) {
+    .top-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+}
